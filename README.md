@@ -180,7 +180,7 @@ console.log("El vector a ordenar es:", vectorms);
 console.log("El vector ordenado por Merge Sort es:", mergeSort(vectorms));
 ```
 ## 7 - QuickSort
-La ordenación rápida es un método de divide y vencerás que divide la matriz de entrada en torno a un elemento pivote que se elige. Existen numerosas variaciones de la ordenación rápida que seleccionan diversos pivotes.
+Es un método de divide y vencerás que divide la matriz de entrada en torno a un elemento pivote que se elige. Existen numerosas variaciones de la ordenación rápida que seleccionan diversos pivotes.
 El elemento inicial debe servir siempre de pivote.
 El componente final debe ser siempre el pivote.
 El pivote debe ser un componente aleatorio.
