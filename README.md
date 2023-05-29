@@ -69,3 +69,35 @@ let vectoris = [70, 50, 30, 10, 20, 40, 60];
 // Llamamos a la función insertionSort pasando el vector a ordenar
 insertionSort(vectoris);
 ```
+### 4 - SelectionSort
+consiste en encontrar el elemento más pequeño entre todos los elementos desordenados, colocarlo al principio y repetir con los demás elementos (se ignoran los que ya están ordenados).
+
+## Rendimiento
+En términos de rendimiento práctico, el algoritmo de selección también tiende a funcionar bien para arreglos pequeños o casi ordenados, pero puede volverse ineficiente para arreglos grandes debido a su complejidad cuadrática
+``` JavaScript
+function selectionSort(vectorss) {
+  // Imprimimos el vector obtenido al principio (Desordenado)
+  console.log("El vector a ordenar es:", vectorss);
+  let n = vectorss.length;
+
+  // Iteramos sobre el vectorss
+  for (let i = 0; i < n - 1; i++) {
+    // Encontramos el elemento mínimo en el vectorss sin ordenar
+    let min = i;
+    for (let j = i + 1; j < n; j++) {
+      if (vectorss[j] < vectorss[min]) {
+        min = j;
+      }
+    }
+    // Intercambiamos el elemento mínimo encontrado con el primer elemento
+    let temp = vectorss[min];
+    vectorss[min] = vectorss[i];
+    vectorss[i] = temp;
+  }
+  // Imprimimos el vector ordenado
+  console.log("El vector ordenado por Selection Sort es:", vectorss);
+}
+let vectorss = [64, 25, 12, 22, 11];
+// Llamamos a la función selectionSort pasando el vector a ordenar
+selectionSort(vectorss);
+```
