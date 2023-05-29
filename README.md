@@ -131,3 +131,29 @@ let vectorsls = [12, 34, 54, 2, 3];
 // Llamamos a la función bubbleSort pasando el vector a ordenar
 shellSort(vectorsls);
 ```
+## 6 - MergeSort
+El algoritmo debe dividir la lista desordenada en dos sublistas de aproximadamente la mitad de su tamaño, ordenar cada sublista utilizando la ordenación por mezcla de forma recursiva y, a continuación, combinar las dos sublistas en una única lista ordenada. La ordenación por mezcla tiene un funcionamiento muy específico. Un dato importante esque debemos saber que si la longitud de la lista es 0 ó 1, ya está ordenada por defecto. En caso contrario, el algoritmo debe dividir la lista desordenada en dos sublistas.
+
+### Rendimiento
+Merge Sort es un algoritmo de ordenamiento eficiente y confiable aunque con una complejidad elevada, el mejor caso y el caso promedio. Es adecuado para arreglos grandes y secuencias de datos enlazados, y su rendimiento no se ve afectado por la distribución de los elementos.
+``` JavaScript
+shellSort(vectorsls);
+
+function mergeSort(vectorms) {
+  let n = vectorms.length;
+
+  // Si el vector tiene un solo elemento, lo devolvemos
+  if (n === 1) {
+    return vectorms;
+  }
+
+  // Encontramos el punto medio del vector
+  const mid = Math.floor(n / 2);
+  const left = vectorms.slice(0, mid);
+  const right = vectorms.slice(mid);
+
+  // Usamos la recursividad para combinar los dos vectores divididos
+  return merge(mergeSort(left), mergeSort(right));
+}
+```
+
