@@ -9,6 +9,10 @@ está ordenada.
 ### Rendimiento.
 Bubble Sort es especialmente deficiente cuando se trata de conjuntos de datos grandes. A medida que el tamaño del conjunto de datos aumenta, el algoritmo puede volverse considerablemente lento.
 
+#### Grafico
+
+![](./gif/BubbleSort.gif)
+
 Ejemplo JavaScript:
 
 ``` JavaScript
@@ -45,6 +49,9 @@ El método de ordenamiento de inserción actua recorriendo la lista a ordenar, t
 ### Rendimiento
 Inserción tiene una complejidad temporal óptima de cuando el vector está completamente ordenada, ya que sólo se necesita una comparación para cada elemento para confirmar que está en el lugar correcto.
 Sin embargo, en el peor de los casos, cuando la matriz está ordenada en orden inverso, el proceso de inserción requiere comparar y desplazar cada elemento para colocarlo en su lugar correcto.
+#### Grafico
+
+![](./gif/InsertionSort.gif)
 ``` JavaScript
 function insertionSort(vectoris) {
   // Imprimimos el vector obtenido al principio (Desordenado)
@@ -74,6 +81,9 @@ Consiste en encontrar el elemento más pequeño entre todos los elementos desord
 
 ### Rendimiento
 En términos de rendimiento práctico, el algoritmo de selección también tiende a funcionar bien para arreglos pequeños o casi ordenados, pero puede volverse ineficiente para arreglos grandes debido a su complejidad cuadrática
+#### Grafico
+
+![](./gif/SelectionSort.gif)
 ``` JavaScript
 function selectionSort(vectorss) {
   // Imprimimos el vector obtenido al principio (Desordenado)
@@ -106,6 +116,9 @@ El Método Shell compara elementos separados por un espacio de varias posiciones
 
 ### Rendimiento
 es un algoritmo de ordenamiento que mejora el rendimiento del algoritmo de inserción mediante el uso de brechas para dividir el arreglo en subarreglos. Aunque su complejidad es mayor el Shell Sort suele ser más eficiente en la práctica para arreglos de tamaño moderado debido a su capacidad para mover elementos distantes más rápidamente.
+#### Grafico
+
+![](./gif/ShellSort.gif)
 ``` JavaScript
 function shellSort(vectorsls) {
   // Imprimimos el vector obtenido al principio (Desordenado)
@@ -136,6 +149,9 @@ El algoritmo debe dividir la lista desordenada en dos sublistas de aproximadamen
 
 ### Rendimiento
 Merge Sort es un algoritmo de ordenamiento eficiente y confiable aunque con una complejidad elevada, el mejor caso y el caso promedio. Es adecuado para arreglos grandes y secuencias de datos enlazados, y su rendimiento no se ve afectado por la distribución de los elementos.
+#### Grafico
+
+![](./gif/MergeSort.gif)
 ``` JavaScript
 function mergeSort(vectorms) {
   let n = vectorms.length;
@@ -188,6 +204,9 @@ Decida pivotar en el medio.
 La partición es el método utilizado en la ordenación rápida. Dada una matriz A y un elemento de la matriz designado como pivote, el objetivo del proceso es colocar x en la posición adecuada de la matriz ordenada y, al mismo tiempo, colocar todos los elementos que sean menores que x antes de x y todos los elementos que sean mayores que x después de x.
 ### Rendimiento
 La complejidad de Quicksort lo convierte en un método generalmente eficaz pero tambien aveces dificil de comprender. Su rendimiento práctico se ve reforzado por la partición efectiva de la matriz y el menor consumo de memoria adicional en comparación con otros métodos de ordenación.
+#### Grafico
+
+![](./gif/QuickSort.gif)
 ``` JavaScript
 function quickSort(vectormqs) {
   let n = vectormqs.length;
