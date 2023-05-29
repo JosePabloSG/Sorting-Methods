@@ -179,4 +179,40 @@ console.log("El vector a ordenar es:", vectorms);
 // Llamamos a la función mergeSort pasando el vector a ordenar
 console.log("El vector ordenado por Merge Sort es:", mergeSort(vectorms));
 ```
+## 7 - QuickSort
+La ordenación rápida es un método de divide y vencerás que divide la matriz de entrada en torno a un elemento pivote que se elige. Existen numerosas variaciones de la ordenación rápida que seleccionan diversos pivotes.
+El elemento inicial debe servir siempre de pivote.
+El componente final debe ser siempre el pivote.
+El pivote debe ser un componente aleatorio.
+Decida pivotar en el medio.
+La partición es el método utilizado en la ordenación rápida. Dada una matriz A y un elemento de la matriz designado como pivote, el objetivo del proceso es colocar x en la posición adecuada de la matriz ordenada y, al mismo tiempo, colocar todos los elementos que sean menores que x antes de x y todos los elementos que sean mayores que x después de x.
+### Rendimiento
+La complejidad de Quicksort lo convierte en un método generalmente eficaz pero tambien aveces dificil de comprender. Su rendimiento práctico se ve reforzado por la partición efectiva de la matriz y el menor consumo de memoria adicional en comparación con otros métodos de ordenación.
+``` JavaScript
+function quickSort(vectormqs) {
+  let n = vectormqs.length;
+
+  // Si el vector tiene un solo elemento, lo devolvemos
+  if (n < 2) {
+    return vectormqs;
+  }
+
+  // Definimos el pivote
+  const pivot = vectormqs[Math.floor(Math.random() * n)];
+
+  // Definimos los vectores menores y mayores
+  const less = vectormqs.filter((value) => value < pivot);
+  const greater = vectormqs.filter((value) => value > pivot);
+
+  // Usamos la recursividad para combinar los dos vectores divididos
+  return [...quickSort(less), pivot, ...quickSort(greater)];
+}
+
+let vectormqs = [10, 7, 8, 9, 1, 5];
+// Imprimimos el vector obtenido al principio (Desordenado)
+console.log("El vector a ordenar es:", vectormqs);
+
+// Llamamos a la función quickSort pasando el vector a ordenar
+console.log("El vector ordenado por Quick Sort es:", quickSort(vectormqs));
+``` 
 
