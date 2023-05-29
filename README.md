@@ -43,7 +43,7 @@ bubbleSort(vectorbs);
 ### 3 - InsertionSort
 El método de ordenamiento de inserción actua recorriendo la lista a ordenar, tomando el elemento actual e insertándolo donde debería comparandoló entre los que ya ha recorrido.
 ## Rendimiento
-inserción tiene una complejidad temporal óptima de cuando el vector está completamente ordenada, ya que sólo se necesita una comparación para cada elemento para confirmar que está en el lugar correcto.
+Inserción tiene una complejidad temporal óptima de cuando el vector está completamente ordenada, ya que sólo se necesita una comparación para cada elemento para confirmar que está en el lugar correcto.
 Sin embargo, en el peor de los casos, cuando la matriz está ordenada en orden inverso, el proceso de inserción requiere comparar y desplazar cada elemento para colocarlo en su lugar correcto.
 ``` JavaScript
 function insertionSort(vectoris) {
@@ -70,7 +70,7 @@ let vectoris = [70, 50, 30, 10, 20, 40, 60];
 insertionSort(vectoris);
 ```
 ### 4 - SelectionSort
-consiste en encontrar el elemento más pequeño entre todos los elementos desordenados, colocarlo al principio y repetir con los demás elementos (se ignoran los que ya están ordenados).
+Consiste en encontrar el elemento más pequeño entre todos los elementos desordenados, colocarlo al principio y repetir con los demás elementos (se ignoran los que ya están ordenados).
 
 ## Rendimiento
 En términos de rendimiento práctico, el algoritmo de selección también tiende a funcionar bien para arreglos pequeños o casi ordenados, pero puede volverse ineficiente para arreglos grandes debido a su complejidad cuadrática
@@ -100,4 +100,34 @@ function selectionSort(vectorss) {
 let vectorss = [64, 25, 12, 22, 11];
 // Llamamos a la función selectionSort pasando el vector a ordenar
 selectionSort(vectorss);
+```
+### 5 - ShellSort
+El Método Shell compara elementos separados por un espacio de varias posiciones, lo que permite a un elemento dar "pasos más grandes" hacia su posición esperada. Termina con una Ordenación por Inserción directa, que supone una mejora respecto al Método de Ordenación por Inserción porque el Método de Ordenación por Inserción es eficaz si la lista está casi ordenada.
+
+## Rendimiento
+es un algoritmo de ordenamiento que mejora el rendimiento del algoritmo de inserción mediante el uso de brechas para dividir el arreglo en subarreglos. Aunque su complejidad es mayor el Shell Sort suele ser más eficiente en la práctica para arreglos de tamaño moderado debido a su capacidad para mover elementos distantes más rápidamente.
+``` JavaScript
+function shellSort(vectorsls) {
+  // Imprimimos el vector obtenido al principio (Desordenado)
+  console.log("El vector a ordenar es:", vectorsls);
+  let n = vectorsls.length;
+
+  // Inicializamos la brecha
+  for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
+    // Realizamos el ordenamiento por inserción
+    for (let i = gap; i < n; i += 1) {
+      let temp = vectorsls[i];
+      let j;
+      for (j = i; j >= gap && vectorsls[j - gap] > temp; j -= gap) {
+        vectorsls[j] = vectorsls[j - gap];
+      }
+      vectorsls[j] = temp;
+    }
+  }
+  // Imprimimos el vector ordenado
+  console.log("El vector ordenado por Shell Sort es:", vectorsls);
+}
+let vectorsls = [12, 34, 54, 2, 3];
+// Llamamos a la función bubbleSort pasando el vector a ordenar
+shellSort(vectorsls);
 ```
