@@ -40,3 +40,32 @@ let vectorbs = listabs.sort(() => Math.random() - 0.5).slice(0, 8);
 // Llamamos a la función bubbleSort pasando el vector a ordenar
 bubbleSort(vectorbs);
 ```
+### 3 - InsertionSort
+El método de ordenamiento de inserción actua recorriendo la lista a ordenar, tomando el elemento actual e insertándolo donde debería comparandoló entre los que ya ha recorrido.
+## Rendimiento
+inserción tiene una complejidad temporal óptima de cuando el vector está completamente ordenada, ya que sólo se necesita una comparación para cada elemento para confirmar que está en el lugar correcto.
+Sin embargo, en el peor de los casos, cuando la matriz está ordenada en orden inverso, el proceso de inserción requiere comparar y desplazar cada elemento para colocarlo en su lugar correcto.
+``` JavaScript
+function insertionSort(vectoris) {
+  // Imprimimos el vector obtenido al principio (Desordenado)
+  console.log("El vector a ordenar es:", vectoris);
+  let n = vectoris.length;
+
+  // Iteramos sobre el vectoris
+  for (let i = 1; i < n; i++) {
+    let current = vectoris[i];
+    let j = i - 1;
+    // Movemos los elementos del vectoris[0..i-1], que son mayores que la clave, a una posición adelante de su posición actual
+    while (j > -1 && current < vectoris[j]) {
+      vectoris[j + 1] = vectoris[j];
+      j--;
+    }
+    vectoris[j + 1] = current;
+  }
+  // Imprimimos el vector ordenado
+  console.log("El vector ordenado por Insertion Sort es:", vectoris);
+}
+let vectoris = [70, 50, 30, 10, 20, 40, 60];
+// Llamamos a la función insertionSort pasando el vector a ordenar
+insertionSort(vectoris);
+```
