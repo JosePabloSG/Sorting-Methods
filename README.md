@@ -137,8 +137,6 @@ El algoritmo debe dividir la lista desordenada en dos sublistas de aproximadamen
 ### Rendimiento
 Merge Sort es un algoritmo de ordenamiento eficiente y confiable aunque con una complejidad elevada, el mejor caso y el caso promedio. Es adecuado para arreglos grandes y secuencias de datos enlazados, y su rendimiento no se ve afectado por la distribución de los elementos.
 ``` JavaScript
-shellSort(vectorsls);
-
 function mergeSort(vectorms) {
   let n = vectorms.length;
 
@@ -155,5 +153,30 @@ function mergeSort(vectorms) {
   // Usamos la recursividad para combinar los dos vectores divididos
   return merge(mergeSort(left), mergeSort(right));
 }
+
+// Función para combinar dos vectores divididos
+function merge(left, right) {
+  let result = [];
+  let i = 0;
+  let j = 0;
+
+  // Combinamos los dos vectores en uno
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      result.push(left[i++]);
+    } else {
+      result.push(right[j++]);
+    }
+  }
+  // Combinamos los vectores restantes
+  return result.concat(left.slice(i)).concat(right.slice(j));
+}
+
+let vectorms = [12, 11, 13, 5, 6, 7];
+// Imprimimos el vector obtenido al principio (Desordenado)
+console.log("El vector a ordenar es:", vectorms);
+
+// Llamamos a la función mergeSort pasando el vector a ordenar
+console.log("El vector ordenado por Merge Sort es:", mergeSort(vectorms));
 ```
 
