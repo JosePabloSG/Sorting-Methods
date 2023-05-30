@@ -37,10 +37,7 @@ function bubbleSort(vectorbs) {
   // Imprimimos el vector ordenado
   console.log("El vector ordenado por Bubble Sort es:", vectorbs);
 }
-// Creamos una lista base del 1 al 100
-let listabs = Array.from({ length: 100 }, (_, i) => i + 1);
-// Generamos un vector aleatorio con 8 elementos de la lista base
-let vectorbs = listabs.sort(() => Math.random() - 0.5).slice(0, 8);
+let vectorbs = [64, 34, 25, 12, 22, 11, 90];
 // Llamamos a la función bubbleSort pasando el vector a ordenar
 bubbleSort(vectorbs);
 ```
