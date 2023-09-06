@@ -162,4 +162,4 @@ let vectormqs = [10, 7, 8, 9, 1, 5];
 console.log("El vector a ordenar es:", vectormqs);
 
 // Llamamos a la función quickSort pasando el vector a ordenar
-console.log("El vector ordenado por Quick Sort es:", quickSort(vectormqs));
+console.log("El vector ordenado por Quick Sort es:", quickSort(vectormqs)); 
